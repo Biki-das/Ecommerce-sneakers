@@ -20,7 +20,7 @@ const cartEmpty = document.querySelector("#cart-empty");
 
 // cart-details toggler
 
-cartTab.addEventListener("mouseover", () => {
+cartTab.addEventListener("click", () => {
   cartDetails.classList.remove("hidden");
 });
 
