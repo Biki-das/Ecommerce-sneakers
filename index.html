@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div class="container h-[684px] md:w-[1030px] mx-auto">
+      <nav class="flex mt-[40px] h-[40px] justify-between relative">
+        <div
+          class="flex gap-x-[13px] basis:[184px] ml-4 md:ml-0 md:basis-[600px] md:justify-between align-middle items-center md:gap-x-[50px]"
+        > 
+          <img src="./images/icon-menu.svg" class="md:hidden w-[17px] h-[15px]"/>
+          <img src="./images/logo.svg" class="h-[22px] w-full" />
+          <ul class="hidden md:flex text-Black gap-x-[30px]">
+            <li class="hover:underline decoration-Orange decoration-4 underline-offset-[63px]"><a href="./">Collections</a></li>
+            <li class="hover:underline decoration-Orange decoration-4 underline-offset-[63px]"><a href="./">Men</a></li>
+            <li class="hover:underline decoration-Orange decoration-4 underline-offset-[63px]"><a href="./">Women</a></li>
+            <li class="hover:underline decoration-Orange decoration-4 underline-offset-[63px]"><a href="./">About</a></li>
+            <li class="hover:underline decoration-Orange decoration-4 underline-offset-[63px]"><a href="./">Contact</a></li>
+          </ul>
+        </div>
+        <div class="flex border border-black md:basis-[125px] justify-between items-center relative cursor-pointer">
+          <a href="./"><img id="cart-tab" class="h-[21px]" src="./images/icon-cart.svg " /></a>
+          <span id="cart-item-count" class="absolute top-0 left-[10px] px-2 bg-orange-400  border border-orange-400 rounded-full text-white font-bold text-[10px]">0</span>
+          <img id="cart-avatar" class="w-[47px] hover:border-2 border-Orange rounded-full" src="./images/image-avatar.png" />
+        </div>
+        <div id="cart-details" class="h-[255px] w-[362px] absolute top-[50px] -right-[100px] bg-white shadow-2xl rounded-lg hidden">
+          <p class="font-bold mt-[24px] ml-[22px]">Cart</p>
+          <hr class="mt-[30px]"/>
+            <div id="cart-info" class="hidden h-[54px] w-[325px] justify-between items-center mx-auto mt-[24px]">
+              <img class="w-[50px] h-[50px] rounded-lg" src="./images/image-product-1-thumbnail.jpg"/>
+               <div class="w-[217px]">
+                <p class="text-Black">Fall Limited Edition Sneakers</p>
+                <div class="flex gap-x-[7px]">
+                  <p id="item-price" class="text-Black">$125.00</p>
+                  <p class="text-Black">x</p>
+                  <p id="total-quantity" class="text-Black">0</p>
+                  <p id="total-price" class="font-bold">$0.00</p>
+                </div>
+               </div>
+               <img id="delete-cart" class="w-[16px] h-[16px]" src="./images/icon-delete.svg"/>               
+            </div>
+          <div id="checkout-btn" class="w-[325px]  bg-orange-400 mx-auto mt-[26px] h-[56px] rounded-lg hidden justify-center cursor-pointer">
+          <button class="font-bold text-white">Checkout</button>
+          </div>
+          <p id="cart-empty" class="text-center">Your cart is empty</p>
+        </div>
+      </nav>
+     
+      <hr class="mt-[46px]" />
+      <main
+        class="w-full h-[697px] flex justify-center items-center gap-x-[110px]"
+      >
+        <section class="w-[468px] h-[585px]">
+          <div class="w-[445px] h-[445px] mx-auto">
+            <img
+               id="active-image"
+              class="w-full h-full rounded-xl"
+              src="./images/image-product-1.jpg"
+            />
+          </div>
+          <div
+          
+            class="flex w-[445px] h-[96px] mx-auto justify-between mt-[30px] cursor-pointer"
+          >
+            <img
+              id="img-gallery"
+              class="rounded-xl hover:opacity-20"
+              src="./images/image-product-1.jpg"
+              alt=""
+            />
+            <img
+              id="img-gallery"
+              class="rounded-xl hover:opacity-20"
+              src="./images/image-product-2.jpg"
+              alt=""
+            />
+            <img
+              id="img-gallery"
+              class="rounded-xl hover:opacity-1"
+              src="./images/image-product-3.jpg"
+              alt=""
+            />
+            <img
+              id="img-gallery"
+              class="rounded-xl hover:opacity-20"
+              src="./images/image-product-4.jpg"
+              alt=""
+            />
+          </div>
+        </section>
+        <section class="w-[450px] h-[585px]">
+          <div class="text-container mt-[80px] font-semibold">
+            <p class="text-Orange text-[12px] tracking-[3px]">
+              SNEAKER COMPANY
+            </p>
+            <p class="text-[40px] leading-tight mt-[25px]">
+              Fall Limited Edition <br />
+              Sneakers
+            </p>
+            <p class="mt-[45px] text-Black font-light">
+              These low-profile sneakers are your perfect casual wear <br />
+              companion. Featuring a durable rubber outer sole. they'll
+              <br />
+              withstand everything the weather can offer.
+            </p>
+            <div class="mt-[36px]">
+              <div
+                class="price-info flex w-[164px] justify-between items-center"
+              >
+                <p class="text-black text-[22px]">$125.00</p>
+                <p class="text-Orange bg-Paleorange p-1">50%</p>
+              </div>
+              <div class="discount-info mt-[2px]">
+                <p class="line-through text-Grayishblue font-normal">$250.00</p>
+              </div>
+              <div
+                class="cart-holder w-full h-[65px] mt-[30px] gap-x-[14px] flex"
+              >
+                <div class="cart-counter flex basis-[174px] h-[56px] gap-x-[14px] items-center justify-evenly bg-Lightgrayishblue rounded-xl">
+                  <button id="btn-increase"><img src="./images/icon-minus.svg"/></button>
+                  <p id="cart-count" class="text=[15px]">0</p>
+                  <button id="btn-decrease"><img src="./images/icon-plus.svg"/></button>
+              </div>
+              <div  id="Add-cart-btn" class="flex basis-[274px] h-[56px] items-center justify-center bg-orange-500 rounded-xl gap-x-[17px] shadow-xl shadow-orange-200 hover:bg-LightOrange cursor-pointer">
+                <img src="./images/icon-cart-white.svg"/>
+                <button  class=" text-white">Add to cart</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
