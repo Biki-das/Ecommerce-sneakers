@@ -17,6 +17,17 @@ const totalPrice = document.querySelector("#total-price");
 const deleteCart = document.querySelector("#delete-cart");
 const checkoutBtn = document.querySelector("#checkout-btn");
 const cartEmpty = document.querySelector("#cart-empty");
+const mobile_menu_btn = document.querySelector("#mobile-menu-btn");
+const mobile_menu = document.querySelector("#mobile-menu");
+const mobile_menu_close_btn = document.querySelector("#mobile-menu-close-btn");
+
+mobile_menu_btn.addEventListener("click", () => {
+  mobile_menu.classList.remove("hidden");
+});
+
+mobile_menu_close_btn.addEventListener("click", () => {
+  mobile_menu.classList.add("hidden");
+});
 
 // cart-details toggler
 
@@ -24,7 +35,7 @@ cartTab.addEventListener("click", () => {
   cartDetails.classList.remove("hidden");
 });
 
-cartDetails.addEventListener("mouseleave", () => {
+cartDetails.addEventListener("click", () => {
   cartDetails.classList.add("hidden");
 });
 
@@ -59,18 +70,30 @@ cartDecreasebtn.addEventListener("click", () => {
 // cart-item-add logic
 
 Add_card_btn.addEventListener("click", () => {
-  let count = cartCount.textContent;
+  let initialcount = cartCount.textContent;
+  let cartcount = Cart_item_count.textContent;
+  let finalCount = Number(initialcount) + Number(cartcount);
+  let count = finalCount;
   Cart_item_count.textContent = count;
 
   //
+  if (count == 0) {
+    Cart_item_count.classList.add("hidden");
+  }
 
   if (count > 0) {
-    console.log(cartEmpty);
     checkoutBtn.classList.remove("hidden");
     checkoutBtn.classList.add("flex");
     cartInfo.classList.remove("hidden");
     cartInfo.classList.add("flex");
     cartEmpty.classList.add("hidden");
+    Cart_item_count.classList.remove("hidden");
+    Toastify({
+      text: "Item added to cart!",
+      gravity: "bottom",
+      duration: 3000,
+      backgroundColor: "#DB7033",
+    }).showToast();
   }
 
   // setting the cart amount
@@ -89,6 +112,7 @@ deleteCart.addEventListener("click", () => {
   cartInfo.classList.add("hidden");
   cartEmpty.classList.remove("hidden");
   Cart_item_count.textContent = count;
+  Cart_item_count.classList.add("hidden");
 });
 
 //checkout-logic
@@ -105,6 +129,7 @@ checkoutBtn.addEventListener("click", () => {
   cartEmpty.classList.remove("hidden");
   cartCount.textContent = count;
   Cart_item_count.textContent = count;
+  Cart_item_count.classList.add("hidden");
   totalQty.textContent = count;
   totalPrice.textContent = "$" + `${count}` + ".00";
 });

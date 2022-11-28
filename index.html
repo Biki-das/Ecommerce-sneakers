@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -9,16 +9,29 @@
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
-  <body>
-    <div class="container  h-[684px] md:w-[1030px] mx-auto"> 
+  <body class="h-full">
+    <div id="mobile-menu" class="hidden h-screen w-[251px] top-0 left-0  bg-white absolute z-20">
+      <nav class="container">
+        <img id="mobile-menu-close-btn" class="ml-[25px] mt-[38px] cursor-pointer" src="./images/icon-close.svg"/>
+        <ul class="flex flex-col gap-y-[30px] ml-[25px] font-bold text-veryDarkBlue text-[20px] mt-[55px]">
+          <p class="cursor-pointer">Collections</p>
+          <p class="cursor-pointer">Men</p>
+          <p class="cursor-pointer">Women</p>
+          <p class="cursor-pointer">About</p>
+          <p class="cursor-pointer">Contact</p>
+        </ul>
+      </nav>
+    </div>
+    <div class="container h-[684px] md:w-[1030px] mx-auto">  
       <nav class="flex mt-[24px] sm:mt-[40px] h-[40px] justify-between relative items-center">
         <div
           class="flex gap-x-[13px]  basis:[184px] md:basis-[600px] md:justify-between align-middle items-center md:gap-x-[50px] ml-[24px]"
         > 
-          <img src="./images/icon-menu.svg" class="md:hidden w-[17px] h-[15px]"/>
+          <img id="mobile-menu-btn" src="./images/icon-menu.svg" class="md:hidden w-[17px] h-[15px] cursor-pointer"/>
           <img src="./images/logo.svg" class="h-[22px] w-full" />
           <ul class="hidden md:flex text-Black gap-x-[30px]">
             <li class="hover:underline decoration-Orange decoration-4 underline-offset-[63px]"><a href="./">Collections</a></li>
@@ -30,7 +43,7 @@
         </div>
         <div class="flex gap-x-[22px]  lg:basis-[125px] justify-between items-center relative cursor-pointer mr-[24px] sm:mr-[0px]">
           <img id="cart-tab" class="h-[21px]" src="./images/icon-cart.svg " />
-          <span id="cart-item-count" class="absolute top-0 left-[10px] px-2 bg-orange-400  border border-orange-400 rounded-full text-white font-bold text-[10px]">0</span>
+          <span id="cart-item-count" class="hidden absolute top-0 left-[10px] px-2 bg-orange-400  border border-orange-400 rounded-full text-white font-bold text-[10px]">0</span>
           <img id="cart-avatar" class="md:w-[47px] h-[24px] md:h-full w-[25px] hover:border-2 border-Orange rounded-full" src="./images/image-avatar.png" />
         </div>
         <div id="cart-details" class="hidden h-[255px] w-[362px] absolute top-[75px] mx-auto  z-50 left-0 right-0 sm:left-auto  sm:top-[50px] sm:-right-[100px] bg-white shadow-2xl rounded-lg ">
@@ -61,11 +74,11 @@
         class="w-full h-[697px] md:flex justify-center items-center gap-x-[110px]"
       > 
      <section class="container flex relative sm:hidden items-center mt-[27px]">
-      <div class="p-4 bg-white absolute rounded-full left-[20px]">
+      <div class="p-4 bg-white absolute rounded-full left-[20px] cursor-pointer">
       <img class="w-[12px] h-[12px]" src="./images/icon-previous.svg"/>
       </div>
       <img class="h-full w-full" src="./images/image-product-1.jpg"/>
-      <div class="p-4 bg-white absolute right-[20px] rounded-full">
+      <div class="p-4 bg-white absolute right-[20px] rounded-full cursor-pointer">
       <img class="w-[12px] h-[12px] " src="./images/icon-next.svg"/>
       </div>
      </section>
@@ -81,7 +94,7 @@
           </div>
           <div
           
-            class="hidden border sm:flex w-[445px] h-[96px] mx-auto justify-between mt-[30px] cursor-pointer"
+            class="hidden sm:flex w-[445px] h-[96px] mx-auto justify-between mt-[30px] cursor-pointer"
           >
             <img
               id="img-gallery"
@@ -137,16 +150,18 @@
               </div>
               </div>
               <div
-                class="cart-holder w-full h-[65px] mt-[30px] gap-x-[14px] flex"
+                class="cart-holder w-full h-[65px] mt-[30px] gap-x-[14px] sm:flex"
               >
-                <div class="cart-counter flex basis-[174px] h-[56px] gap-x-[14px] items-center justify-evenly bg-Lightgrayishblue rounded-xl">
-                  <button id="btn-increase"><img src="./images/icon-minus.svg"/></button>
+                <div class="cart-counter w-[327px] flex sm:basis-[174px] h-[56px] sm:gap-x-[14px] items-center justify-between sm:justify-evenly bg-Lightgrayishblue rounded-xl">
+                  <button id="btn-increase" class="ml-[20px] sm:ml-0"><img src="./images/icon-minus.svg"/></button>
                   <p id="cart-count" class="text=[15px]">0</p>
-                  <button id="btn-decrease"><img src="./images/icon-plus.svg"/></button>
+                  <button id="btn-decrease" class="mr-[20px] sm:mr-0"><img src="./images/icon-plus.svg"/></button>
               </div>
-              <div  id="Add-cart-btn" class="flex basis-[274px] h-[56px] items-center justify-center bg-orange-500 rounded-xl gap-x-[17px] shadow-xl shadow-orange-200 hover:bg-LightOrange cursor-pointer">
+              <div id="Add-cart-btn" class="flex w-[327px] mt-[18px] sm:mt-0 sm:basis-[274px] h-[56px] items-center justify-center bg-orange-500 rounded-xl gap-x-[17px] shadow-xl shadow-orange-200 hover:bg-LightOrange cursor-pointer">
                 <img src="./images/icon-cart-white.svg"/>
                 <button  class=" text-white">Add to cart</button>
+              </div>
+              <div class="container h-[50px] sm:hidden">
               </div>
             </div>
           </div>
@@ -155,6 +170,6 @@
     </div>
     <script type="module" src="/main.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   </body>
 </html>
