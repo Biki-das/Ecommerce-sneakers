@@ -31,22 +31,45 @@
      <div class="container w-[600px] h-[600px] mx-auto mt-[102px] sticky top-0">
       <img id="carousel-close" class="w-[20px] h-[20px] absolute z-10 right-0 cursor-pointer" src="./images/icon-close-white.svg"/>
       <div class="float-right w-[445px] h-[445px] sm:block relative">
-        <div class="absolute top-[280px] -left-4 px-3 py-2 rounded-full bg-white cursor-pointer">
+        <div id="prev-desktop-btn" class="absolute top-[280px] -left-4 px-3 py-2 rounded-full bg-white cursor-pointer">
         <img src="./images/icon-previous.svg"/>
         </div>
+        <div class="desktop-slides">
         <img 
            id="carousel-img"
           class="w-full h-full rounded-xl hidden sm:block mt-[43px]"
           src="./images/image-product-1.jpg"
         />
-        <div class="absolute top-[280px] -right-4 px-3 py-2 rounded-full bg-white cursor-pointer">
+        </div>
+        <div class="desktop-slides hidden">
+          <img 
+             id="carousel-img"
+            class="w-full h-full rounded-xl hidden sm:block mt-[43px]"
+            src="./images/image-product-2.jpg"
+          />
+          </div>
+          <div class="desktop-slides hidden">
+            <img 
+               id="carousel-img"
+              class="w-full h-full rounded-xl hidden sm:block mt-[43px]"
+              src="./images/image-product-3.jpg"
+            />
+            </div>
+            <div class="desktop-slides hidden">
+              <img 
+                 id="carousel-img"
+                class="w-full h-full rounded-xl hidden sm:block mt-[43px]"
+                src="./images/image-product-4.jpg"
+              />
+              </div>
+        <div id="next-desktop-btn"  class="absolute top-[280px] -right-4 px-3 py-2 rounded-full bg-white cursor-pointer">
         <img src="./images/icon-next.svg"/>
         </div>
         <div class="mt-[10px] w-[380px] mx-auto h-[80px] flex flex-1 justify-evenly">
-            <img class="rounded-lg" src="./images/image-product-1-thumbnail.jpg" alt="">
-            <img class="rounded-lg" src="./images/image-product-2-thumbnail.jpg" alt="">
-            <img class="rounded-lg" src="./images/image-product-3-thumbnail.jpg" alt="">
-            <img class="rounded-lg" src="./images/image-product-4-thumbnail.jpg" alt="">
+            <img id="carousel-picker" class="rounded-lg" src="./images/image-product-1.jpg" alt="">
+            <img id="carousel-picker" class="rounded-lg" src="./images/image-product-2.jpg" alt="">
+            <img id="carousel-picker" class="rounded-lg" src="./images/image-product-3.jpg" alt="">
+            <img id="carousel-picker" class="rounded-lg" src="./images/image-product-4.jpg" alt="">
         </div>
       </div>
      </div>
@@ -98,11 +121,22 @@
       > 
      <section class="container flex relative sm:hidden items-center mt-[27px]">
       <div class="p-4 bg-white absolute rounded-full left-[20px] cursor-pointer">
-      <img class="w-[12px] h-[12px]" src="./images/icon-previous.svg"/>
+      <img id="prev" class="w-[12px] h-[12px]" src="./images/icon-previous.svg"/>
       </div>
+      <div id="slides">
       <img class="h-full w-full" src="./images/image-product-1.jpg"/>
+      </div>
+      <div id="slides" class="hidden">
+      <img class="h-full w-full" src="./images/image-product-2.jpg"/>
+      </div>
+      <div id="slides" class="hidden">
+      <img class="h-full w-full" src="./images/image-product-3.jpg"/>
+      </div>
+      <div id="slides" class="hidden">
+      <img class="h-full w-full" src="./images/image-product-4.jpg"/>
+      </div>
       <div class="p-4 bg-white absolute right-[20px] rounded-full cursor-pointer">
-      <img class="w-[12px] h-[12px] " src="./images/icon-next.svg"/>
+      <img id="next" class="w-[12px] h-[12px] " src="./images/icon-next.svg"/>
       </div>
      </section>           
         <section class="w-[468px] h-[585px] sm:mt-[14px] lg:mt-0 hidden sm:block mx-auto">

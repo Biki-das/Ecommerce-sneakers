@@ -22,6 +22,42 @@ const mobile_menu = document.querySelector("#mobile-menu");
 const mobile_menu_close_btn = document.querySelector("#mobile-menu-close-btn");
 const lightBox = document.querySelector("#light-box");
 const carouselClosebtn = document.querySelector("#carousel-close");
+const slides = document.querySelectorAll("#slides");
+const prevButton = document.querySelector("#prev");
+const nextButton = document.querySelector("#next");
+const desktopSlides = document.querySelectorAll(".desktop-slides");
+const prevdesktopBtn = document.querySelector("#prev-desktop-btn");
+const nextdesktopBtn = document.querySelector("#next-desktop-btn");
+const current_desktop_carousel_img = document.querySelector("#carousel-img");
+const desktop_gallery_picker = document.querySelectorAll("#carousel-picker");
+
+console.log(desktop_gallery_picker);
+
+desktop_gallery_picker.forEach((img) =>
+  img.addEventListener("click", (e) => {
+    desktop_gallery_picker.forEach((img) => (img.style.opacity = 1));
+    desktop_gallery_picker.forEach((img) => (img.style.border = "none"));
+    current_desktop_carousel_img.src = e.target.src;
+    e.target.style.opacity = opacity;
+    e.target.style.border = "2px solid orange";
+  })
+);
+
+let currentSlide = 0;
+
+nextButton.addEventListener("click", () => {
+  let nextSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].style.display = "none";
+  slides[nextSlide].style.display = "block";
+  currentSlide = nextSlide;
+});
+
+prevButton.addEventListener("click", () => {
+  let prevSlide = currentSlide == 0 ? slides.length - 1 : currentSlide - 1;
+  slides[currentSlide].style.display = "none";
+  slides[prevSlide].style.display = "block";
+  currentSlide = prevSlide;
+});
 
 mobile_menu_btn.addEventListener("click", () => {
   mobile_menu.classList.remove("hidden");
@@ -29,6 +65,25 @@ mobile_menu_btn.addEventListener("click", () => {
 
 mobile_menu_close_btn.addEventListener("click", () => {
   mobile_menu.classList.add("hidden");
+});
+
+let desktopCurrentSlide = 0;
+
+nextdesktopBtn.addEventListener("click", () => {
+  let nextSlide = (desktopCurrentSlide + 1) % desktopSlides.length;
+  desktopSlides[desktopCurrentSlide].style.display = "none";
+  desktopSlides[nextSlide].style.display = "block";
+  desktopCurrentSlide = nextSlide;
+});
+
+prevdesktopBtn.addEventListener("click", () => {
+  let prevSlide =
+    desktopCurrentSlide === 0
+      ? desktopSlides.length - 1
+      : desktopCurrentSlide - 1;
+  desktopSlides[desktopCurrentSlide].style.display = "none";
+  desktopSlides[prevSlide].style.display = "block";
+  desktopCurrentSlide = prevSlide;
 });
 
 // cart-details toggler
@@ -134,11 +189,11 @@ checkoutBtn.addEventListener("click", () => {
   totalPrice.textContent = "$" + `${count}` + ".00";
 });
 
-current.addEventListener("mouseover", () => {
-  if (screen.availWidth > 975) {
+if (screen.availWidth > 975) {
+  current.addEventListener("click", () => {
     lightBox.classList.remove("hidden");
-  }
-});
+  });
+}
 
 carouselClosebtn.addEventListener("click", () => {
   lightBox.classList.add("hidden");
