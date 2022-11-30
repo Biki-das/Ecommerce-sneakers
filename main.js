@@ -135,7 +135,9 @@ checkoutBtn.addEventListener("click", () => {
 });
 
 current.addEventListener("mouseover", () => {
-  lightBox.classList.remove("hidden");
+  if (screen.availWidth > 975) {
+    lightBox.classList.remove("hidden");
+  }
 });
 
 carouselClosebtn.addEventListener("click", () => {
