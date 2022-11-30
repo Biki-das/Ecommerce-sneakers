@@ -19,6 +19,7 @@ module.exports = {
         White: "hsl(0, 0%, 100%)",
         Black: "#7a7a7c",
         LightOrange: "#ffac6a",
+        transparentBlack: "rgb(0,0,0,0.4)",
       },
     },
   },

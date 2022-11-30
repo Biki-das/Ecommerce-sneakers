@@ -20,6 +20,8 @@ const cartEmpty = document.querySelector("#cart-empty");
 const mobile_menu_btn = document.querySelector("#mobile-menu-btn");
 const mobile_menu = document.querySelector("#mobile-menu");
 const mobile_menu_close_btn = document.querySelector("#mobile-menu-close-btn");
+const lightBox = document.querySelector("#light-box");
+const carouselClosebtn = document.querySelector("#carousel-close");
 
 mobile_menu_btn.addEventListener("click", () => {
   mobile_menu.classList.remove("hidden");
@@ -32,11 +34,7 @@ mobile_menu_close_btn.addEventListener("click", () => {
 // cart-details toggler
 
 cartTab.addEventListener("click", () => {
-  cartDetails.classList.remove("hidden");
-});
-
-cartDetails.addEventListener("click", () => {
-  cartDetails.classList.add("hidden");
+  cartDetails.classList.toggle("hidden");
 });
 
 // ImageGallery
@@ -113,6 +111,7 @@ deleteCart.addEventListener("click", () => {
   cartEmpty.classList.remove("hidden");
   Cart_item_count.textContent = count;
   Cart_item_count.classList.add("hidden");
+  cartDetails.classList.add("hidden");
 });
 
 //checkout-logic
@@ -125,6 +124,7 @@ checkoutBtn.addEventListener("click", () => {
   );
   let count = 0;
   checkoutBtn.classList.add("hidden");
+  cartDetails.classList.add("hidden");
   cartInfo.classList.add("hidden");
   cartEmpty.classList.remove("hidden");
   cartCount.textContent = count;
@@ -132,4 +132,12 @@ checkoutBtn.addEventListener("click", () => {
   Cart_item_count.classList.add("hidden");
   totalQty.textContent = count;
   totalPrice.textContent = "$" + `${count}` + ".00";
+});
+
+current.addEventListener("mouseover", () => {
+  lightBox.classList.remove("hidden");
+});
+
+carouselClosebtn.addEventListener("click", () => {
+  lightBox.classList.add("hidden");
 });
