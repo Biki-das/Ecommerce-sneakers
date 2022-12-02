@@ -22,11 +22,16 @@ module.exports = {
         transparentBlack: "rgb(0,0,0,0.4)",
       },
       animation: {
-        slideup: "slideup 1s",
+        slideup: "slideup 1s linear",
+        slideright: "slideright 1.4s ease-in-out",
       },
       keyframes: {
         slideup: {
           "0%": { transform: "translateY(100%)", opacity: "0" },
+          "100%": { opacity: "1", transform: "none" },
+        },
+        slideright: {
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
           "100%": { opacity: "1", transform: "none" },
         },
       },
