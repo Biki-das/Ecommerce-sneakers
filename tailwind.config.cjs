@@ -21,6 +21,15 @@ module.exports = {
         LightOrange: "#ffac6a",
         transparentBlack: "rgb(0,0,0,0.4)",
       },
+      animation: {
+        slideup: "slideup 1s",
+      },
+      keyframes: {
+        slideup: {
+          "0%": { transform: "translateY(100%)", opacity: "0" },
+          "100%": { opacity: "1", transform: "none" },
+        },
+      },
     },
   },
   plugins: [],
